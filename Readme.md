@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Yulia Mozharovskaya](https://up.htmlacademy.ru/javascript/18/user/282489).
-* Наставник: [Андрей Рыжаков](https://htmlacademy.ru/profile/id201015git).
+* Наставник: [Андрей Рыжаков](https://htmlacademy.ru/profile/id201015).
 
 
 _Не удаляйте и не обращайте внимание на файлы:_<br>
