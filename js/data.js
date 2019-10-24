@@ -20,36 +20,13 @@ var TITLES = [
   'title7',
   'title8',
 ];
-var ADDRESSES = [
-  '600, 350',
-  '600, 350',
-  '600, 350',
-  '600, 350',
-  '600, 350',
-  '600, 350',
-  '600, 350',
-  '600, 350',
-];
-var PRICES = [
-  1000,
-  800,
-  1200,
-  500,
-  900,
-  1100,
-  1150,
-  700,
-];
 var TYPES = [
   'palace',
   'flat',
   'house',
   'bungalo',
 ];
-var ROOMS = [1, 2, 3, 4];
-var GUESTS = [1, 2, 3, 4, 5, 6, 7];
-var CHECKIN = ['12:00', '13:00', '14:00'];
-var CHECKOUT = ['12:00', '13:00', '14:00'];
+var TIME = ['12:00', '13:00', '14:00'];
 var FEATURES = [
   'wifi',
   'dishwasher',
@@ -74,16 +51,11 @@ var PHOTOS = [
   'http://o0.github.io/assets/images/tokyo/hotel3.jpg',
 ];
 
-module.exports.data = {
+module.exports = {
   avatars: AVATARS,
   titles: TITLES,
-  addresses: ADDRESSES,
-  prices: PRICES,
   types: TYPES,
-  rooms: ROOMS,
-  guests: GUESTS,
-  checkin: CHECKIN,
-  checkout: CHECKOUT,
+  time: TIME,
   features: FEATURES,
   descriptions: DESCRIPTIONS,
   photos: PHOTOS,
