@@ -9,6 +9,7 @@ console.log(announcements);
 function generateObjects() {
   // Create an empty array
   var someName = [];
+
   // Create var for numbers
   var MIN_PRICE = 500;
   var MAX_PRICE = 10000;
@@ -48,7 +49,7 @@ function generateObjects() {
         type: data.types[indexType], // if I add 'i' instead of indexType it will always show the same number
         rooms: totalRooms,
         guests: totalGuests,
-        checkin: data.times[indexCheckin], // it doesn't work
+        checkin: data.times[indexCheckin], // doesn't work with i
         checkout: data.times[indexCheckout],
         features: data.features[i],
         description: data.descriptions[i],
