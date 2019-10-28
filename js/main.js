@@ -11,6 +11,7 @@ function generateObjects() {
   var someName = [];
 
   // Create var for numbers
+  var PIN_COUNT = 8;
   var MIN_PRICE = 500;
   var MAX_PRICE = 10000;
   var MIN_ROOMS = 1;
@@ -24,9 +25,8 @@ function generateObjects() {
   var MIN_Y = 130;
   var MAX_Y = 630;
 
-
   // Create 8 itterations
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < PIN_COUNT; i++) {
     var indexPrice = getRandomNumber(MIN_PRICE, MAX_PRICE);
     var indexType = getRandomNumber(0, 3);
     var totalRooms = getRandomNumber(MIN_ROOMS, MAX_ROOMS);
@@ -51,7 +51,7 @@ function generateObjects() {
         guests: totalGuests,
         checkin: data.times[indexCheckin], // doesn't work with i
         checkout: data.times[indexCheckout],
-        features: data.features[i],
+        features: data.features.slice(0, getRandomNumber(0, data.features.length)), // data.features[i]
         description: data.descriptions[i],
         photos: data.photos[indexPhotos]
       },
@@ -66,5 +66,29 @@ function generateObjects() {
   // Return the array
   return someName;
 }
-// Fix all function objects!
+// temp delete class .map--faded from block .map
+var $map = document.querySelector('.map');
+$map.classList.remove('map--faded');
+var $pinTemplate = document.querySelector('#pin');
 
+// create DOM elements for pins
+function generatePins() {
+  // Create an empty array
+  var someNames = [];
+  for (var i = 0; i < PIN_COUNT; i++) {
+    someNames.push(generateObjects());
+  }
+  return someNames;
+}
+// // populate map with pins
+// var populatePins = function(someValue) {
+//   // Create DOM element based on object pin data
+//   var $mapPins = document.querySelector('.map-pins');
+//   var $fragment = document.createDocumentFragment();
+//   var $template = document.querySelector('#pin');
+//   for (var i = 0; i < someValue; i++) {
+//     var pin = createPin(values[i], $template.cloneNode(true));
+//     $fragment.appendChild(pin);
+//   }
+//   $mapPins.appendChild(fragment);
+// }
