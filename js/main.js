@@ -74,12 +74,7 @@ var $pinTemplate = document.querySelector('#pin');
 // create DOM elements for pins
 function generatePins() {
   // Create an empty array
-  var someNames = [];
-  for (var i = 0; i < PIN_COUNT; i++) {
-    someNames.push(generateObjects());
-  }
-  return someNames;
-}
+
 // // populate map with pins
 // var populatePins = function(someValue) {
 //   // Create DOM element based on object pin data
