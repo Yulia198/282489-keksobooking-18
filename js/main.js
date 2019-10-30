@@ -67,14 +67,47 @@ function generateObjects() {
   return someName;
 }
 // temp delete class .map--faded from block .map
+// create DOM elements for pins
 var $map = document.querySelector('.map');
 $map.classList.remove('map--faded');
 var $pinTemplate = document.querySelector('#pin');
 
-// create DOM elements for pins
-function generatePins() {
-  // Create an empty array
+/* var generatePins = function (pins) {
+  for (var i = 0; i < 8; i++) {
+    var pinElement = $pinTemplate.cloneNode(true);
+  }
+};*/
 
+// Ну как?
+// var pins = generateObjects(){
+// for (var i = 0; i < pins.length; i++){
+// var pinTemplate = $pinTemplate.cloneNode(true);
+//  pins[i] - будет обьект пина, со всеми нужными данными
+//  нужно - засетить avatar(поменять src у картинки)
+//  отобразить на страничке(document.appendChild)
+// }
+// }
+//   // Create an empty array
+//   var someNames = [];
+//   for (var i = 0; i < PIN_COUNT; i++) {
+//     someNames.push(generateObjects());
+//   }
+//   return someNames;
+// };
+/*
+Итоговую разметку метки.map__pin можно взять из шаблона #pin.
+То есть у тебя в разметке есть элемент с id pin
+ вот тебе нужно его в цикле вытащить, склонировать и заполнить данными из предыдущего шага
+то есть у тебя есть функция generateObjects
+она вернет массив
+var pins = generateObjects()
+
+for (var i = 0; i < pins.length; i++) {
+  var pinTemplate = склонировать template
+  pins[i] - будет обьект пина, со всеми нужными данными
+  тебе нужно - засетить avatar (поменять src у картинки)
+  отобразить на страничке (document.appendChild)
+}*/
 // // populate map with pins
 // var populatePins = function(someValue) {
 //   // Create DOM element based on object pin data
