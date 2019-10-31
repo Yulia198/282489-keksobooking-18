@@ -70,53 +70,14 @@ function generateObjects() {
 // create DOM elements for pins
 var $map = document.querySelector('.map');
 $map.classList.remove('map--faded');
-var $pinTemplate = document.querySelector('#pin');
-
-/* var generatePins = function (pins) {
-  for (var i = 0; i < 8; i++) {
-    var pinElement = $pinTemplate.cloneNode(true);
+var populatePins = function (someValue) {
+  // Create DOM element based on object pin data
+  var $mapPins = document.querySelector('.map-pins');
+  var $fragment = document.createDocumentFragment();
+  var $template = document.querySelector('#pin');
+  for (var i = 0; i < someValue; i++) {
+    var pin = populatePins(someValue[i], $template.cloneNode(true));
+    $fragment.appendChild(pin);
   }
-};*/
-
-// Ну как?
-// var pins = generateObjects(){
-// for (var i = 0; i < pins.length; i++){
-// var pinTemplate = $pinTemplate.cloneNode(true);
-//  pins[i] - будет обьект пина, со всеми нужными данными
-//  нужно - засетить avatar(поменять src у картинки)
-//  отобразить на страничке(document.appendChild)
-// }
-// }
-//   // Create an empty array
-//   var someNames = [];
-//   for (var i = 0; i < PIN_COUNT; i++) {
-//     someNames.push(generateObjects());
-//   }
-//   return someNames;
-// };
-/*
-Итоговую разметку метки.map__pin можно взять из шаблона #pin.
-То есть у тебя в разметке есть элемент с id pin
- вот тебе нужно его в цикле вытащить, склонировать и заполнить данными из предыдущего шага
-то есть у тебя есть функция generateObjects
-она вернет массив
-var pins = generateObjects()
-
-for (var i = 0; i < pins.length; i++) {
-  var pinTemplate = склонировать template
-  pins[i] - будет обьект пина, со всеми нужными данными
-  тебе нужно - засетить avatar (поменять src у картинки)
-  отобразить на страничке (document.appendChild)
-}*/
-// // populate map with pins
-// var populatePins = function(someValue) {
-//   // Create DOM element based on object pin data
-//   var $mapPins = document.querySelector('.map-pins');
-//   var $fragment = document.createDocumentFragment();
-//   var $template = document.querySelector('#pin');
-//   for (var i = 0; i < someValue; i++) {
-//     var pin = createPin(values[i], $template.cloneNode(true));
-//     $fragment.appendChild(pin);
-//   }
-//   $mapPins.appendChild(fragment);
-// }
+  $mapPins.appendChild($fragment);
+};
