@@ -4,7 +4,6 @@ var getRandomNumber = window.utils.getRandomNumber;
 var data = window.data;
 
 var announcements = generateObjects();
-console.log(announcements);
 
 function generateObjects() {
   // Create an empty array
@@ -20,8 +19,8 @@ function generateObjects() {
   var MAX_GUESTS = 7;
   // var MIN_PHOTOS = 1;
   // var MAX_PHOTOS = 3;
-  var MIN_X = 400; // Approximate
-  var MAX_X = 800; // Approximate
+  var MIN_X = 0;
+  var MAX_X = 1150;
   var MIN_Y = 130;
   var MAX_Y = 630;
 
@@ -67,17 +66,23 @@ function generateObjects() {
   return someName;
 }
 // temp delete class .map--faded from block .map
+var map = document.querySelector('.map');
+map.classList.remove('map--faded');
+
 // create DOM elements for pins
-var $map = document.querySelector('.map');
-$map.classList.remove('map--faded');
-var populatePins = function (someValue) {
+var renderPins = function (announcements) {
   // Create DOM element based on object pin data
-  var $mapPins = document.querySelector('.map-pins');
-  var $fragment = document.createDocumentFragment();
-  var $template = document.querySelector('#pin');
-  for (var i = 0; i < someValue; i++) {
-    var pin = populatePins(someValue[i], $template.cloneNode(true));
-    $fragment.appendChild(pin);
+  var template = document.querySelector('#pin');
+  var wrapper = document.querySelector('.map__pins');
+  for (var i = 0; i < announcements.length; i++) {
+    var pin = announcements[i];
+    var button = template.cloneNode(true).content.querySelector('.map__pin');
+    var img = button.querySelector('img');
+    button.style.left = pin.location.x + 'px';
+    button.style.top = pin.location.y + 'px';
+    img.src = pin.author.avatar;
+    img.alt = pin.offer.title;
+    wrapper.append(button);
   }
-  $mapPins.appendChild($fragment);
 };
+renderPins(announcements);
