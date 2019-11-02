@@ -86,3 +86,44 @@ var renderPins = function (announcements) {
   }
 };
 renderPins(announcements);
+
+var templateOffer = document.querySelector('#card').content.querySelector('.popup');
+var createCard = function () {
+  var card = templateOffer.cloneNode(true);
+  // Выведите заголовок объявления offer.title в заголовок.popup__title.
+  var offerTitle = card.querySelector('.popup__title');
+  // Выведите адрес offer.address в блок.popup__text--address.
+  var offerAddress = card.querySelector('.popup__text--address');
+  // Выведите цену offer.price в блок.popup__text--price строкой вида { { offer.price } } ₽/ночь.
+  var offerPrice = card.querySelector('.popup__text--price');
+// HELP! КАК???? Что-то пошло не так
+  var priceRangeMin: {
+    flat: 1000 + '₽/ночь.',
+    bungalo: 1500 + '₽/ночь.',
+    house: 8000 + '₽/ночь.',
+    palace: 10000 + '₽/ночь.'
+  };
+  // В блок.popup__type выведите тип жилья offer.type: Квартира для flat, Бунгало для bungalo, Дом для house, Дворец для palace.
+  var offerType = card.querySelector('.popup__type');
+  var typesOnMap = {
+    flat: 'Квартира',
+    bungalo: 'Бунгало',
+    house: 'Дом',
+    palace: 'Дворец'
+  };
+  // Выведите количество гостей и комнат offer.rooms и offer.guests в блок.popup__text--capacity строкой вида { { offer.rooms } } комнаты для { { offer.guests } } гостей.Например, 2 комнаты для 3 гостей.
+  var offerRooms = card.querySelector('.popup__text--capacity');
+  var offerGuests = card.querySelector('.popup__text--capacity');
+  // Время заезда и выезда offer.checkin и offer.checkout в блок.popup__text--time строкой вида Заезд после { { offer.checkin } }, выезд до { { offer.checkout } }.Например, заезд после 14: 00, выезд до 12: 00.
+  var offerCheckin = card.querySelector('.popup__text--time');
+  var offerCheckout = card.querySelector('.popup__text--time');
+  // В список.popup__features выведите все доступные удобства в объявлении.
+  var offerFeatures = card.querySelector('.popup__features');
+  // В блок.popup__description выведите описание объекта недвижимости offer.description.
+  var offerDescription = card.querySelector('.popup__description');
+  // В блок.popup__photos выведите все фотографии из списка offer.photos.Каждая из строк массива photos должна записываться как src соответствующего изображения.
+  var offerPhotos = card.querySelector('.popup__photos');
+  // Замените src у аватарки пользователя — изображения, которое записано в.popup__avatar — на значения поля author.avatar отрисовываемого объекта.
+};
+// Вставьте полученный DOM - элемент в блок.map перед блоком.map__filters - container.
+
