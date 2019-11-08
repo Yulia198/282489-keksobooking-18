@@ -1,6 +1,5 @@
 'use strict';
 
-var data = require('./data');
 
 var generateObjects = function () {
   var objects = [];
@@ -49,6 +48,7 @@ function getRandomNumber(min, max) {
   var random = min + Math.random() * (max + 1 - min);
   return Math.floor(random);
 }
-module.exports = {
-  generateObjects: generateObjects
+window.utils = {
+  getRandomNumber: getRandomNumber
 };
+

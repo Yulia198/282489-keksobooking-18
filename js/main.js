@@ -142,7 +142,6 @@ function renderOfferPhotos(photos, container) {
     img.alt = 'Фотография жилья';
   }
 }
-// Вставьте полученный DOM - элемент в блок.map перед блоком.map__filters - container.
 console.log(announcements);
 createCard(announcements[0]);
 
