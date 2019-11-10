@@ -51,4 +51,3 @@ function getRandomNumber(min, max) {
 window.utils = {
   getRandomNumber: getRandomNumber
 };
-

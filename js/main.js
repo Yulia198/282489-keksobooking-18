@@ -142,23 +142,23 @@ function renderOfferPhotos(photos, container) {
     img.alt = 'Фотография жилья';
   }
 }
-console.log(announcements);
+console.log(renderOfferPhotos);
 createCard(announcements[0]);
 
 // Иду вслепую дальше
-/* var KEYCODENUMBER = {
+var KEYCODENUMBER = {
   ENTER_KEYCODE: 13,
   ESC_KEYCODE: 27
 };
 var DEBOUNCE_INTERVAL = 1000;
 
-var escKeyDownHandler = function(evt, action) {
+var escKeydownHandler = function(evt, action) {
   if (evt.keyCode === keyCodeNumber.escKeyCode) {
   evt.preventDefault();
   action();
   }
 };
-var enterKeyDownHandler = function (evt, action){
+var enterKeydownHandler = function (evt, action){
   if (evt.keyCode === KeyCodeNumber.enterKeyCode) {
   action();
   }
@@ -174,5 +174,4 @@ return function(){
   something.apply(null, parametrs);
   } DEBOUNCE_INTERVAL);
 };
-} ;
-*/
+};
