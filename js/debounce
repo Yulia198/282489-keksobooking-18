@@ -1,0 +1,36 @@
+'use strict';
+// Иду вслепую дальше
+var KEYCODENUMBER = {
+  ENTER_KEYCODE: 13,
+  ESC_KEYCODE: 27
+};
+
+var escKeydownHandler = function (evt, action) {
+  if (evt.keyCode === keyCodeNumber.escKeyCode) {
+    evt.preventDefault();
+    action();
+  }
+};
+var enterKeydownHandler = function (evt, action) {
+  if (evt.keyCode === keyCodeNumber.enterKeyCode) {
+    action();
+  }
+};
+
+(function () {
+  var DEBOUNCE_INTERVAL = 500;
+  window.debounce = function (somefunction) {
+    var lastTimeout = null;
+    return function () {
+      var param = arguments;
+      if (lastTimeout) {
+        window.clearTimeout(lastTimeout);
+      }
+      lastTimeout = window.setTimeout(function () {
+        somefunction.apply(null, param);
+      }, DEBOUNCE_INTERVAL);
+    };
+  };
+})();
+
+

@@ -126,11 +126,10 @@ var createCard = function (cardData) {
   offerRooms.textContent = cardData.offer.rooms + ' комнаты для ' + cardData.offer.guests + ' гостей';
   offerCheckin.textContent = 'Заезд после ' + cardData.offer.checkin + ', выезд до ' + cardData.offer.checkout;
 
-  renderOfferPhotos(cardData.offer.photos, offerPhotos);
+  renderOfferPhotos(cardData.offer.photos, offerPhotos, offerPhotos);
   document.body.append(card);
-};
-// photos
-function renderOfferPhotos(photos, container) {
+//photos
+function renderOfferPhotos(photos, container, offerPhotos) {
   offerPhotos.innerHTML = '';
   for (var i = 0; i < photos.length; i++) {
     var img = document.createElement('img');
@@ -143,35 +142,17 @@ function renderOfferPhotos(photos, container) {
   }
 }
 console.log(renderOfferPhotos);
-createCard(announcements[0]);
+  createCard(announcements[0]);
+/*
+(function(){
+  var newAdForm = document.quesrySelector('.ad-form');
+  var newResetButton = newAdForm.querySelector('.ad-form__reset');
+  var newRoomsSelect = document.querySelector('#room_number');
+  var newGuestsSelect = document.querySelector('#capacity');
+  var newPriceSelect = document.querySelector('#price');
+  var newTypeSelect = document.querySelector('#type');
+  var newCheckinSelect = document.querySelector('#timein');
+  var newCheckoutSelect = document.querySelector('#timeout');
+})
 
-// Иду вслепую дальше
-var KEYCODENUMBER = {
-  ENTER_KEYCODE: 13,
-  ESC_KEYCODE: 27
-};
-var DEBOUNCE_INTERVAL = 1000;
-
-var escKeydownHandler = function(evt, action) {
-  if (evt.keyCode === keyCodeNumber.escKeyCode) {
-  evt.preventDefault();
-  action();
-  }
-};
-var enterKeydownHandler = function (evt, action){
-  if (evt.keyCode === KeyCodeNumber.enterKeyCode) {
-  action();
-  }
-};
-var DEBOUNCE = function (something){
-  var previousTimeout = null;
-return function(){
-  var param = ???; // no idea
-  if (previousTimeout) {
-  window.clearTimeout(previousTimeout);
-  }
-  previousTimeout = window.setTimeout(function(){
-  something.apply(null, parametrs);
-  } DEBOUNCE_INTERVAL);
-};
-};
+*/
